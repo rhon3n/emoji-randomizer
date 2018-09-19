@@ -1,0 +1,30 @@
+// This is an emoji randomizer
+// Coded by rhonen, 2018
+// Free for use for any purpose
+
+let randomizedEmoji = '👋';
+// Replace or add the emojis you'd like to include in the generator!
+// To replace: replace the emoji between the ''.
+// To add: place a comma , at the end of the array and add any emoji in quotes.
+//         ex. ... '🈴', 'your-emoji-here'];
+const emojis = ['🏄‍♂️ 🌊', '🙏 🙏 🙏', '😬', '🤙', '🎊', '⚛️', '🈴'];
+// Emoji randomizer :)
+const randomEmojiGenerator = () => {
+  let previousEmoji = randomizedEmoji;
+  let randomEmoji = Math.floor(Math.random() * emojis.length);
+  if(randomEmoji) {
+    randomizedEmoji = emojis[randomEmoji];
+      // Select where you'd like the emoji to appear.
+      document.getElementById('element-id-here').innerHTML = randomizedEmoji;
+      // Used for debugging in the console.
+    console.log(`Random emoji generated, changed from ${previousEmoji}, to ${randomizedEmoji}.`)
+    console.log(randomEmoji);
+
+  }
+}
+// Function that calls randomEmojiGenerator.
+const generateEmoji = () => {
+  randomEmojiGenerator();
+}
+// Change id of desired button element to change emoji.
+document.getElementById('emoji-gen').onclick=generateEmoji;
